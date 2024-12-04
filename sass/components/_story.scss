@@ -5,4 +5,66 @@
     background-color: $color-white;
     border-radius: 3px;
     padding: 6rem;
+    padding-left: 9rem;
+    font-size: $default-font-size;
+    transform: skewX(-12deg);
+
+    // Have to add this separately because you can NEVER have more than two transform properties applying at //the same time.
+    // & > * {
+    //     transform: skewX(12deg);
+    // }
+
+    &__shape {
+        // For 'shape-outside' to work, it needs defined width and heightj
+        // as well as it must be floated. Quite demanding!
+        width: 15rem;
+        height: 15rem;
+        background-color: orangered;
+        float: left;
+        // All shape-outside does is defines where the content flows around
+        // the element. If we want the element to also look like a circle, we
+        // can add the clip-path property.
+        shape-outside: circle(50% at 50% 50%);
+        clip-path: circle(50% at 50% 50%);
+        // When you have a floated element, it is best to not use margins,
+        // just use transform if you need to give it some space.
+        transform: translateX(-3rem) skewX(12deg);
+        position: relative;
+    }
+
+    &__img {
+        height: 100%;
+        transform: translate(-3.2rem) scale(1.4);
+        transition: all .5s;
+        // backface-visibility: hidden;
+    }
+
+    &__text {
+        transform: skewX(12deg);
+    }
+
+    &__caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, 20%);
+        color: $color-white;
+        text-transform: uppercase;
+        font-size: 1.7rem;
+        text-align: center;
+        opacity: 0;
+        transition: all .5s;
+        // There is shaking! Add backface-visibility
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+
+    &:hover &__img {
+        transform: translate(-4rem) scale(1.0);
+        filter: blur(3px) brightness(80%);
+    }
 }
