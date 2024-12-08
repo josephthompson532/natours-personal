@@ -56,7 +56,7 @@ body {
   }
   100% {
     transform: translateY(0rem);
-    opacity: 100%;
+    opacity: 1;
   }
 }
 body {
@@ -69,10 +69,8 @@ body {
 .heading-primary {
   color: #fff;
   text-transform: uppercase;
-  /* gets rid of the shakiness from the animatino */
   backface-visibility: hidden;
   margin-bottom: 6rem;
-  /* Display both of these spans as block-level elements to put them on their own lines. */
 }
 .heading-primary--main {
   display: block;
@@ -145,7 +143,7 @@ body {
 .btn {
   /* link and visited special states are for anchor elements (<a>) */
 }
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;

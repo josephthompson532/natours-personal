@@ -1,11 +1,15 @@
 
 .btn {
     /* link and visited special states are for anchor elements (<a>) */
+    &,
     &:link,
     &:visited {
         text-transform: uppercase;
         text-decoration: none;
+        // Always put more padding on the side for buttons/a tags. Just looks better
         padding: 1.5rem 4rem;
+        // Set btn component display to inline-block, so that it can always be 
+        // centered with text-align: center on the parent element.
         display: inline-block;
         border-radius: 10rem;
         color: $color-grey-dark;
@@ -61,10 +65,13 @@
 
     &::after {
         content: "";
+        // display: inline-block here is not actually necessary
         display: inline-block;
         height: 100%;
         width: 100%;
         border-radius: 10rem;
+        // Set position to absolute so that it occupies the same space.
+        // Position of the base button IS set to relative
         position: absolute;
         top: 0;
         left: 0;
