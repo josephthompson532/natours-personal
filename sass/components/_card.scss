@@ -12,8 +12,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        // When you set the position to absolute, the elements only take up
-        // the width of their content. To fix this, just set their width to 
+        // When you set the position to absolute, the elements only take up the width of their content. To fix this, just set their width to 
         // 100%
         width: 100%;
         backface-visibility: hidden;
@@ -144,10 +143,7 @@
     }
 
     &__cta {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        @include position_absolute_center;
         width: 90%;
         text-align: center;
     }
